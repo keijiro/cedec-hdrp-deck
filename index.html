@@ -76,7 +76,7 @@
 
 </div>
 <div><p>半透明<br/>
-Clustered Forward Lighting</p>
+Clustered Forward Shading</p>
 </div>
 <div><br/>
 
@@ -164,7 +164,41 @@ Clustered Forward Lighting</p>
 <div><img src="img/Layered3.png"/>
 
 </div>
-<div><p>メリットその３<br/>カスタマイズにフレンドリー</p>
+<div><p>メリットその３<br/>カスタマイズに<br/>フレンドリー</p>
+</div>
+<div><p>今までのUnity<br/>謎マクロ<br/>謎プラグマが暗躍</p>
+</div>
+<div><pre>#pragma surface surf Standard vertex:vert addshadow
+
+void vert(inout appdata_full v, out Input data)
+{
+  UNITY_INITIALIZE_OUTPUT(Input, data);
+  ...
+}
+
+void surf(Input IN, inout SurfaceOutputStandard o)
+{
+  ...
+}</pre>
+
+</div>
+<div><p>関数、structを使った<br/>C言語風の実装<br/>充実した<br/>シェーダーライブラリ<br/></p>
+</div>
+<div><img style="width:49%" src="img/CustomShader1.gif"/>
+<img style="width:49%" src="img/CustomShader2.gif"/>
+
+<img style="width:49%" src="img/CustomShader3.gif"/>
+<img style="width:49%" src="img/CustomShader4.gif"/>
+
+</div>
+<div><p><a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline/blob/master/com.unity.render-pipelines.high-definition/HDRP/Material/Lit/Lit.shader">Lit.shader</a> をコピペして改造<br/>
+<a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline/blob/master/com.unity.render-pipelines.high-definition/HDRP/ShaderPass/VertMesh.hlsl">VertMesh.hlsl</a> や<br/>
+<a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline/blob/master/com.unity.render-pipelines.high-definition/HDRP/ShaderPass/ShaderPassGBuffer.hlsl">ShaderPassGBuffer.hlsl</a><br/>
+なども改造ポイント</p>
+</div>
+<div><p>#define と<br/>#include の塊</p>
+</div>
+<div><p>ホワイトボックスなので<br/>諦めるポイントは少ない</p>
 </div>
 <div><p>HDRP<br/>導入検討の<br/>ポイント</p>
 </div>

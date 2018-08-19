@@ -229,6 +229,52 @@ Layered Material<br/>
 
 ---
 
+今までのUnity<br/>謎マクロ<br/>謎プラグマが暗躍
+
+---
+
+<pre>#pragma surface surf Standard vertex:vert addshadow
+
+void vert(inout appdata_full v, out Input data)
+{
+  UNITY_INITIALIZE_OUTPUT(Input, data);
+  ...
+}
+
+void surf(Input IN, inout SurfaceOutputStandard o)
+{
+  ...
+}</pre>
+
+---
+
+関数、structを使った<br/>C言語風の実装<br/>充実した<br/>シェーダーライブラリ<br/>
+
+---
+
+<img style="width:49%" src="img/CustomShader1.gif"/>
+<img style="width:49%" src="img/CustomShader2.gif"/>
+
+<img style="width:49%" src="img/CustomShader3.gif"/>
+<img style="width:49%" src="img/CustomShader4.gif"/>
+
+---
+
+<a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline/blob/master/com.unity.render-pipelines.high-definition/HDRP/Material/Lit/Lit.shader">Lit.shader</a> をコピペして改造<br/>
+<a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline/blob/master/com.unity.render-pipelines.high-definition/HDRP/ShaderPass/VertMesh.hlsl">VertMesh.hlsl</a> や<br/>
+<a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline/blob/master/com.unity.render-pipelines.high-definition/HDRP/ShaderPass/ShaderPassGBuffer.hlsl">ShaderPassGBuffer.hlsl</a><br/>
+なども改造ポイント
+
+---
+
+#define と<br/>#include の塊
+
+---
+
+ホワイトボックスなので<br/>諦めるポイントは少ない
+
+---
+
 HDRP<br/>導入検討の<br/>ポイント
 
 ---
