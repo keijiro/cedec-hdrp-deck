@@ -24,7 +24,13 @@ PS4 を<br/>ベースラインにした<br/>新しいレンダラー
 
 ---
 
-<a href="https://github.com/keijiro/TestbedHDRP">github.com/keijiro/TestbedHDRP</a>
+- サンプル
+
+  https://github.com/keijiro/TestbedHDRP
+
+- プレゼン
+
+  https://keijiro.github.io/cedec-hdrp-deck
 
 ---
 
@@ -429,6 +435,9 @@ HDRP<br/>導入検討の<br/>ポイント
 謝辞
 
 - Statue models scanned by Geoffrey Marchal (CC-BY)
+
   https://sketchfab.com/geoffreymarchal
+
 - Photogrammetric textures created by StruffelProductions (CC0)
+
   https://cc0textures.com
