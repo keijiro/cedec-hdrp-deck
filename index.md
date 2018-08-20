@@ -423,3 +423,12 @@ HDRP<br/>導入検討の<br/>ポイント
 
 <notes>後方互換性がしっかりしていないのけど、未実装部分があるので、長期間使っていくのはつらい
 とは言え、いきなりクラッシュするような不安定さは無いので、短期間の用途で使うなら</notes>
+
+---
+
+謝辞
+
+- Statue models scanned by Geoffrey Marchal (CC-BY)
+  https://sketchfab.com/geoffreymarchal
+- Photogrammetric textures created by StruffelProductions (CC0)
+  https://cc0textures.com
