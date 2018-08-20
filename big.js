@@ -19,7 +19,7 @@ window.addEventListener("load", function() {
     );
   }
 
-  var ASPECT_RATIO = 16.0 / 9;
+  var ASPECT_RATIO = 16.0 / 9.6;
   var timeoutInterval;
 
   // Read the contents of `notes` elements as strings, and then
