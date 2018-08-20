@@ -16,10 +16,9 @@
 <body class='dark'>
   <div><p>HDRP</p>
 </div>
-<div><p>HDRP<br/>とは</p>
-</div>
 <div><p>High<br/>Definition<br/>Render<br/>Pipeline</p>
-<p><notes>最新の機能を詰め込んだ新しいレンダーパイプライン
+<p><notes>Unity が公式に開発配布する SRP のひとつ
+最新の機能を詰め込んだ新しいレンダーパイプライン
 もっと分かりやすく有り体に言ってしまえば……</notes></p>
 </div>
 <div><p>PS4 を<br/>ベースラインにした<br/>新しいレンダラー</p>
@@ -29,24 +28,42 @@
 
 <p><notes>ここが便利だな、ここがおいしいな、と思ったポイントをアトランダムに紹介</notes></p>
 </div>
+<div><p><a href="https://github.com/keijiro/TestbedHDRP">github.com/keijiro/TestbedHDRP</a></p>
+</div>
+<div><br/>
+
+</div>
 <div><p>メリットその１<br/>ライティングが<br/>むちゃくちゃ強力</p>
-<p><notes>そのうえ高速化もなされているため、パフォーマンスに影響を与えることなく凝ったライティング演出を構築することが可能に</notes></p>
+<p><notes>ライティングについて、様々な便利な機能が追加されているうえ、同時に高速化もなされているため、負荷を適度に抑えつつも、凝ったライティングを構築することが可能に</notes></p>
 </div>
 <div><p>FPTL</p>
+<p><notes>その高速化のカギとなるのが FPTL</notes></p>
 </div>
 <div><p>Fine<br/>Pruned<br/>Tiled<br/>Lighting</p>
-</div>
-<div><img src="img/GBuffer.png"/>
-
+<p><notes>Deferred Shading を高速化する仕組み
+いわゆるタイルベースレンダリングの一種
+例えばこんなシーンがあるとする</notes></p>
 </div>
 <div><img src="img/FPTL1.png"/>
 
+<p><notes>Deferred Shading ではこれをまず GBuffer にレンダリングする</notes></p>
+</div>
+<div><img src="img/GBuffer.png"/>
+
+<p><notes>これを細かなタイルに分割して</notes></p>
 </div>
 <div><img src="img/FPTL2.png"/>
 
+<p><notes>２段階に分けて厳密に絞り込むので fine pruned
+GBuffer へのアクセスが最小限で済むのでメモリ帯域に優しい</notes></p>
+<p><notes>難しい理屈はあるが……簡単に言えば……
+タイルデバッグモードで表示されるこの数値を低くすれば軽くなる
+Directional Light は例外</notes></p>
 </div>
 <div><img src="img/FPTL3.png"/>
 
+<p><notes>極端な例
+20 x 10 = 200 個のスポットライト</notes></p>
 </div>
 <div><img src="img/FPTL4.png"/>
 
@@ -54,37 +71,60 @@
 <div><img src="img/GPUPro7.png"/>
 
 </div>
-<div><p>新しいライト形状<br/>
-矩形ライト<br/>
-線分ライト</p>
+<div><p>半透明<br/>
+Clustered Forward Shading</p>
+</div>
+<div><p><notes>FPTL は主にパフォーマンスに関係
+他にもパワーアップのポイントはある</notes></p>
+</div>
+<div><p>新しいライト形状<br/>矩形ライト<br/>線分ライト</p>
 </div>
 <div><img src="img/LightType.png"/>
 
+<p><notes>テレビ画面のような面積を持った光源
+レフ板やディフューザーを使ったような柔らかなライティング</notes></p>
 </div>
 <div><img src="img/LTC.png"/>
 
+<p><notes>Sphere や Disc も追加予定</notes></p>
+</div>
+<div><img style="width:100%;height:1px" src="img/Blank.png"/>
+
+<img style="width:49%" src="https://i.imgur.com/2qlNtFC.gif"/>
+<img style="width:49%" src="https://i.imgur.com/K3k5ffi.gif"/>
+
+<img style="width:100%;height:1px" src="img/Blank.png"/>
+
+<p><notes>スタティックなエリアライトと違って動きのある表現にも使えるのが面白い</notes></p>
 </div>
 <div><p>すごく便利<br/>弱点：<br/>明るくなり過ぎがち</p>
+<p><notes>シャドウが使えないので</notes></p>
 </div>
 <div><img src="img/SSAO.png"/>
 
-</div>
-<div><img src="img/LightValue.png"/>
-
-</div>
-<div><img src="img/VolumetricLight.png"/>
-
-</div>
-<div><p>半透明<br/>
-Clustered Forward Shading</p>
+<p><notes>PPS の Volume と組み合わせるといいかも</notes></p>
 </div>
 <div><br/>
 
 </div>
+<div><img src="img/LightValue.png"/>
+
+<p><notes>色温度での色の設定も可能</notes></p>
+</div>
+<div><p>Volumetric Lighting</p>
+<p>(Volumetric Fog)</p>
+</div>
+<div><img src="img/VolumetricLight.png"/>
+
+</div>
+<div><p><notes>ライティングについては以上</notes></p>
+</div>
 <div><p>メリットその２<br/>標準シェーダーがむちゃくちゃ強力</p>
+<p><notes>標準の PBR シェーダーが強化されている</notes></p>
 </div>
 <div><img src="img/Lit1.png"/>
 
+<p><notes>ぱっと見では若干パラメーターが増えているかなあ、という程度だが……</notes></p>
 </div>
 <div><img src="img/Lit2.png"/>
 
@@ -116,6 +156,8 @@ Clustered Forward Shading</p>
 </div>
 <div><img src="img/SSS4.png"/>
 
+<p><notes>マテリアルとは別に Diffusion Profile というのを用意する
+１パイプラインにつき１６個まで定義できる</notes></p>
 </div>
 <div><p>Anisotropy<br/>異方性反射</p>
 </div>
@@ -140,6 +182,7 @@ Clustered Forward Shading</p>
 </div>
 <div><img src="img/BentNormal2.png"/>
 
+<p><notes>Specular Occlusion</notes></p>
 </div>
 <div><p>Displacement Mapping</p>
 </div>
@@ -148,15 +191,19 @@ Clustered Forward Shading</p>
 </div>
 <div><img src="img/Displacement2.png"/>
 
+<p><notes>Pixel displacement
+Tesselation displacement</notes></p>
 </div>
 <div><img src="img/Displacement3.png"/>
 
 </div>
+<div><img src="img/Displacement4.png"/>
+
+<p><notes>Pixel displacement は凹み方向のみ
+平面への適用のみ正しく処理できる</notes></p>
+</div>
 <div><p>Layered Material<br/>
 レイヤー機能</p>
-</div>
-<div><img src="img/Layered1.png"/>
-
 </div>
 <div><img src="img/Layered2.png"/>
 
@@ -164,7 +211,18 @@ Clustered Forward Shading</p>
 <div><img src="img/Layered3.png"/>
 
 </div>
+<div><img src="img/Layered1.png"/>
+
+<p><notes>マスクにはテクスチャと頂点カラーが使える
+レイヤーとデカールを使いこなすのがディテール感を出すコツ</notes></p>
+</div>
 <div><p>メリットその３<br/>カスタマイズに<br/>フレンドリー</p>
+<p><notes>カスタマイズされることを想定した設計になっている
+まず何といっても違うのは……</notes></p>
+</div>
+<div><p>ソースコードが<br/><a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline">GitHub</a> 上に<br/>公開されている</p>
+</div>
+<div><p>パッケージとして<br/>独立した<br/>バージョニング</p>
 </div>
 <div><img src="img/Versioning1.png"/>
 
@@ -177,6 +235,9 @@ Clustered Forward Shading</p>
 </div>
 <div><img src="img/Versioning4.png"/>
 
+</div>
+<div><p><notes>中の実装についてもカスタマイズが許容されるものになっている
+というのも……</notes></p>
 </div>
 <div><p>今までのUnity<br/>謎マクロ<br/>謎プラグマが暗躍</p>
 </div>
@@ -194,25 +255,35 @@ void surf(Input IN, inout SurfaceOutputStandard o)
 }</pre>
 
 </div>
-<div><p>関数、structを使った<br/>C言語風の実装<br/>充実した<br/>シェーダーライブラリ<br/></p>
+<div><p>関数、structを使った<br/>C言語風の実装<br/>汎用的な<br/>シェーダーライブラリ<br/></p>
 </div>
-<div><img style="width:49%" src="img/CustomShader1.gif"/>
+<div><img style="width:100%;height:1px" src="img/Blank.png"/>
+
+<img style="width:49%" src="img/CustomShader1.gif"/>
 <img style="width:49%" src="img/CustomShader2.gif"/>
 
 <img style="width:49%" src="img/CustomShader3.gif"/>
 <img style="width:49%" src="img/CustomShader4.gif"/>
 
+<img style="width:100%;height:1px" src="img/Blank.png"/>
+
 </div>
-<div><p><a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline/blob/master/com.unity.render-pipelines.high-definition/HDRP/Material/Lit/Lit.shader">Lit.shader</a> をコピペして改造<br/>
-<a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline/blob/master/com.unity.render-pipelines.high-definition/HDRP/ShaderPass/VertMesh.hlsl">VertMesh.hlsl</a> や<br/>
-<a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline/blob/master/com.unity.render-pipelines.high-definition/HDRP/ShaderPass/ShaderPassGBuffer.hlsl">ShaderPassGBuffer.hlsl</a><br/>
-なども改造ポイント</p>
+<div><p>カスタムシェーダー<br/><a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline/blob/master/com.unity.render-pipelines.high-definition/HDRP/Material/Lit/Lit.shader">Lit.shader</a> をコピペして改造</p>
+</div>
+<div><p>頂点いじるなら <a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline/blob/master/com.unity.render-pipelines.high-definition/HDRP/ShaderPass/VertMesh.hlsl">VertMesh.hlsl</a> の辺りを改造</p>
+</div>
+<div><p>GBuffer いじるなら <a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline/blob/master/com.unity.render-pipelines.high-definition/HDRP/ShaderPass/ShaderPassGBuffer.hlsl">ShaderPassGBuffer.hlsl</a> の辺りを改造</p>
 </div>
 <div><p>#define と<br/>#include の塊</p>
 </div>
-<div><p>ホワイトボックスなので<br/>諦めるポイントは少ない</p>
+<div><p>ホワイトボックス<br/>なので諦める<br/>ポイントは少ない</p>
+</div>
+<div><br/>
+
 </div>
 <div><p>HDRP<br/>導入検討の<br/>ポイント</p>
+<p><notes>導入すべきか、せざるべきか
+判断ポイント</notes></p>
 </div>
 <div><p>で、もう<br/>完成してるの？<br/>使っていいの？</p>
 </div>
@@ -220,6 +291,13 @@ void surf(Input IN, inout SurfaceOutputStandard o)
 <li>未実装部分が少なくない</li>
 <li>後方互換性が確立されていない</li>
 </ul>
+</div>
+<div><ul>
+<li>長期プロジェクトへの導入は慎重に</li>
+<li>ワンオフ的に使うならアリです</li>
+</ul>
+<p><notes>後方互換性がしっかりしていないのけど、未実装部分があるので、長期間使っていくのはつらい
+とは言え、いきなりクラッシュするような不安定さは無いので、短期間の用途で使うなら</notes></p>
 </div>
 </body>
 </html>
