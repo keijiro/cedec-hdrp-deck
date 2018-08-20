@@ -119,8 +119,8 @@ Clustered Forward Shading
 
 <img style="width:100%;height:1px" src="img/Blank.png"/>
 
-<img style="width:49%" src="https://i.imgur.com/2qlNtFC.gif"/>
-<img style="width:49%" src="https://i.imgur.com/K3k5ffi.gif"/>
+<img style="width:49%" src="img/LightFx1.gif"/>
+<img style="width:49%" src="img/LightFx2.gif"/>
 
 <img style="width:100%;height:1px" src="img/Blank.png"/>
 
