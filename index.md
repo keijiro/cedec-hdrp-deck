@@ -229,6 +229,22 @@ Layered Material<br/>
 
 ---
 
+<img src="img/Versioning1.png"/>
+
+---
+
+<img src="img/Versioning2.png"/>
+
+---
+
+<img src="img/Versioning3.png"/>
+
+---
+
+<img src="img/Versioning4.png"/>
+
+---
+
 今までのUnity<br/>謎マクロ<br/>謎プラグマが暗躍
 
 ---
