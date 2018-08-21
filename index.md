@@ -121,6 +121,8 @@ Clustered Forward Shading
 
 <img style="width:100%;height:1px" src="img/Blank.png"/>
 
+<notes>従来のスタティックなエリアライトと違ってダイナミックな使い方ができるのが面白い</notes>
+
 ---
 
 すごく便利<br/>弱点：<br/>明るくなり過ぎがち
@@ -130,6 +132,8 @@ Clustered Forward Shading
 ---
 
 <img src="img/SSAO.png"/>
+
+<notes>Direct lighting strength</notes>
 
 ---
 
@@ -202,21 +206,6 @@ Subsurface Scattering<br/>表面下散乱
 <img src="img/SSS2.png"/>
 
 <notes>エリアライトとの組み合わせが面白い</notes>
-
----
-
-<img src="img/SSS3.png"/>
-
-<notes>Thickness map
-Substance Painter
-xNormal, Knald</notes>
-
----
-
-<img src="img/SSS4.png"/>
-
-<notes>マテリアルとは別に Diffusion Profile を用意する
-１パイプラインにつき１６個まで定義できる</notes>
 
 ---
 
@@ -300,14 +289,15 @@ Layered Material<br/>
 
 ---
 
-<img src="img/Layered3.png"/>
+<img src="img/Layered1.png"/>
+
+<notes>マスクにはテクスチャと頂点カラーが使える</note>
 
 ---
 
-<img src="img/Layered1.png"/>
+<img src="img/Layered3.png"/>
 
-<notes>マスクにはテクスチャと頂点カラーが使える
-レイヤーとデカールを使いこなすのがディテール感を出すコツ</notes>
+<notes>レイヤーとデカールを使いこなすのがディテール感を出すコツ</notes>
 
 ---
 
@@ -346,9 +336,7 @@ Layered Material<br/>
 
 ---
 
-<notes>というように、パッケージの外枠についてカスタマイズが考慮されたものになっているが、
-中身についてもカスタマイズが許容されるものになっている
-というのも……</notes>
+シェーダーの<br/>ホワイト<br/>ボックス化
 
 ---
 
