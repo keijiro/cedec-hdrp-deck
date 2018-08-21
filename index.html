@@ -22,17 +22,18 @@
 もっと分かりやすく有り体に言ってしまえば……</notes></p>
 </div>
 <div><p>PS4 を<br/>ベースラインにした<br/>新しいレンダラー</p>
-<p><notes>PS4 の AAA タイトルなどでよく使われているレンダリング方式をベースに</notes></p>
+<p><notes>PS4 の AAA タイトルなどでよく使われているレンダリング方式をベースに
+PS4 および PS4 以降のハードウェアのスペックに合わせて設計されたレンダラー</notes></p>
 </div>
 <div><img src="img/Features.png"/>
 
 <p><notes>ここが便利だな、ここがおいしいな、と思ったポイントをアトランダムに紹介</notes></p>
 </div>
 <div><ul>
-<li><p>サンプル</p>
+<li><p>サンプルプロジェクト</p>
 <p><a href="https://github.com/keijiro/TestbedHDRP">https://github.com/keijiro/TestbedHDRP</a></p>
 </li>
-<li><p>プレゼン</p>
+<li><p>プレゼン資料</p>
 <p><a href="https://keijiro.github.io/cedec-hdrp-deck">https://keijiro.github.io/cedec-hdrp-deck</a></p>
 </li>
 </ul>
@@ -53,24 +54,17 @@
 </div>
 <div><img src="img/FPTL1.png"/>
 
-<p><notes>Deferred Shading ではこれをまず GBuffer にレンダリングする</notes></p>
 </div>
 <div><img src="img/GBuffer.png"/>
 
-<p><notes>これを細かなタイルに分割して</notes></p>
 </div>
 <div><img src="img/FPTL2.png"/>
 
-<p><notes>２段階に分けて厳密に絞り込むので fine pruned
-GBuffer へのアクセスが最小限で済むのでメモリ帯域に優しい</notes></p>
-<p><notes>難しい理屈はあるが……簡単に言えば……
-タイルデバッグモードで表示されるこの数値を低くすれば軽くなる
-Directional Light は例外</notes></p>
+<p><notes>Directional Light は例外</notes></p>
 </div>
 <div><img src="img/FPTL3.png"/>
 
-<p><notes>極端な例
-20 x 10 = 200 個のスポットライト</notes></p>
+<p><notes>20 x 10 = 200 個のスポットライト</notes></p>
 </div>
 <div><img src="img/FPTL4.png"/>
 
@@ -102,21 +96,19 @@ Clustered Forward Shading</p>
 
 <img style="width:100%;height:1px" src="img/Blank.png"/>
 
-<p><notes>スタティックなエリアライトと違って動きのある表現にも使えるのが面白い</notes></p>
 </div>
 <div><p>すごく便利<br/>弱点：<br/>明るくなり過ぎがち</p>
 <p><notes>シャドウが使えないので</notes></p>
 </div>
 <div><img src="img/SSAO.png"/>
 
-<p><notes>PPS の Volume と組み合わせるといいかも</notes></p>
 </div>
 <div><br/>
 
 </div>
 <div><img src="img/LightValue.png"/>
 
-<p><notes>色温度での色の設定も可能</notes></p>
+<p><notes>色温度</notes></p>
 </div>
 <div><p>Volumetric Lighting</p>
 <p>(Volumetric Fog)</p>
@@ -152,18 +144,21 @@ Clustered Forward Shading</p>
 </div>
 <div><img src="img/SSS1.png"/>
 
+<p><notes>人の肌、ゼリー、ミルク、大理石</notes></p>
 </div>
 <div><img src="img/SSS2.png"/>
 
+<p><notes>エリアライトとの組み合わせが面白い</notes></p>
 </div>
 <div><img src="img/SSS3.png"/>
 
-</div>
-<div><p>Thickness map<br/>xNormal<br/>Knald<br/>Substance Painter</p>
+<p><notes>Thickness map
+Substance Painter
+xNormal, Knald</notes></p>
 </div>
 <div><img src="img/SSS4.png"/>
 
-<p><notes>マテリアルとは別に Diffusion Profile というのを用意する
+<p><notes>マテリアルとは別に Diffusion Profile を用意する
 １パイプラインにつき１６個まで定義できる</notes></p>
 </div>
 <div><p>Anisotropy<br/>異方性反射</p>
@@ -173,14 +168,17 @@ Clustered Forward Shading</p>
 </div>
 <div><img src="img/Anisotropy2.png"/>
 
+<p><notes>Tangent</notes></p>
 </div>
 <div><img src="img/Anisotropy3.png"/>
 
+<p><notes>Binormal</notes></p>
 </div>
 <div><p>Iridescence<br/>虹色反射</p>
 </div>
 <div><img src="img/Iridescence.png"/>
 
+<p><notes>シャボン玉、虫の羽</notes></p>
 </div>
 <div><p>Bent Normal Mapping</p>
 </div>
@@ -206,6 +204,9 @@ Vertex/Tesselation displacement</notes></p>
 <p><notes>Pixel displacement は凹み方向のみ
 平面への適用のみ正しく処理できる</notes></p>
 </div>
+<div><p><notes>このようにマテリアルの基本的な表現力が向上しているが
+それを組み合わせて更に複雑にするための機能が用意されている</notes></p>
+</div>
 <div><p>Layered Material<br/>
 レイヤー機能</p>
 </div>
@@ -219,6 +220,9 @@ Vertex/Tesselation displacement</notes></p>
 
 <p><notes>マスクにはテクスチャと頂点カラーが使える
 レイヤーとデカールを使いこなすのがディテール感を出すコツ</notes></p>
+</div>
+<div><br/>
+
 </div>
 <div><p>メリットその３<br/>カスタマイズに<br/>フレンドリー</p>
 <p><notes>カスタマイズされることを想定した設計になっている
@@ -240,10 +244,12 @@ Vertex/Tesselation displacement</notes></p>
 <div><img src="img/Versioning4.png"/>
 
 </div>
-<div><p><notes>中の実装についてもカスタマイズが許容されるものになっている
+<div><p><notes>というように、パッケージの外枠についてカスタマイズが考慮されたものになっているが、
+中身についてもカスタマイズが許容されるものになっている
 というのも……</notes></p>
 </div>
 <div><p>今までのUnity<br/>謎マクロ<br/>謎プラグマが暗躍</p>
+<p><notes>謎なブラックボックス部分が多くてカスタマイズしにくいという側面があった</notes></p>
 </div>
 <div><pre>#pragma surface surf Standard vertex:vert addshadow
 
@@ -258,8 +264,17 @@ void surf(Input IN, inout SurfaceOutputStandard o)
   ...
 }</pre>
 
+<p><notes>シェーダーコンパイラが見えない所で生成するものが多く、読み解くにも限界が</notes></p>
 </div>
-<div><p>関数、structを使った<br/>C言語風の実装<br/>汎用的な<br/>シェーダーライブラリ<br/></p>
+<div><p>普通のC言語風の実装<br/>ソースから解読可能<br/>改造も可能</p>
+<p><notes>シェーダーライブラリも汎用性の高いものになっている</notes></p>
+</div>
+<div><p>まずはここから <a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline/blob/master/com.unity.render-pipelines.high-definition/HDRP/Material/Lit/Lit.shader">HDRP/Material/Lit/Lit.shader
+</a></p>
+</div>
+<div><p>#define<br/>#ifdef<br/>#include<br/>の塊</p>
+</div>
+<div><p>ホワイトボックス<br/>なので諦める<br/>ポイントは少ない</p>
 </div>
 <div><img style="width:100%;height:1px" src="img/Blank.png"/>
 
@@ -272,35 +287,25 @@ void surf(Input IN, inout SurfaceOutputStandard o)
 <img style="width:100%;height:1px" src="img/Blank.png"/>
 
 </div>
-<div><p>カスタムシェーダー<br/><a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline/blob/master/com.unity.render-pipelines.high-definition/HDRP/Material/Lit/Lit.shader">Lit.shader</a> をコピペして改造</p>
-</div>
-<div><p>頂点いじるなら <a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline/blob/master/com.unity.render-pipelines.high-definition/HDRP/ShaderPass/VertMesh.hlsl">VertMesh.hlsl</a> の辺りを改造</p>
-</div>
-<div><p>GBuffer いじるなら <a href="https://github.com/Unity-Technologies/ScriptableRenderPipeline/blob/master/com.unity.render-pipelines.high-definition/HDRP/ShaderPass/ShaderPassGBuffer.hlsl">ShaderPassGBuffer.hlsl</a> の辺りを改造</p>
-</div>
-<div><p>#define と<br/>#include の塊</p>
-</div>
-<div><p>ホワイトボックス<br/>なので諦める<br/>ポイントは少ない</p>
-</div>
 <div><br/>
 
 </div>
 <div><p>HDRP<br/>導入検討の<br/>ポイント</p>
-<p><notes>導入すべきか、せざるべきか
-判断ポイント</notes></p>
 </div>
 <div><p>で、もう<br/>完成してるの？<br/>使っていいの？</p>
+<p><notes>残念ながら、まだプレビュー
+Unity 2019 のどこかでプレビューを外したい</notes></p>
 </div>
 <div><ul>
-<li>未実装部分が少なくない</li>
-<li>後方互換性が確立されていない</li>
+<li>未実装部分がある</li>
+<li>後方互換性が不確実</li>
 </ul>
 </div>
 <div><ul>
 <li>長期プロジェクトへの導入は慎重に</li>
-<li>ワンオフ的に使うならアリです</li>
+<li>ワンオフものならアリかも</li>
 </ul>
-<p><notes>後方互換性がしっかりしていないのけど、未実装部分があるので、長期間使っていくのはつらい
+<p><notes>後方互換性がしっかりしていないので、長期間付き合っていくのはつらい
 とは言え、いきなりクラッシュするような不安定さは無いので、短期間の用途で使うなら</notes></p>
 </div>
 <div><p>謝辞</p>
