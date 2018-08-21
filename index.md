@@ -277,16 +277,12 @@ Displacement Mapping
 
 <img src="img/Displacement2.png"/>
 
-<notes>Pixel displacement
-Tesselation displacement</notes>
+<notes>Pixel displacement (parallax occlusion mapping)
+Vertex/Tesselation displacement</notes>
 
 ---
 
 <img src="img/Displacement3.png"/>
-
----
-
-<img src="img/Displacement4.png"/>
 
 <notes>Pixel displacement は凹み方向のみ
 平面への適用のみ正しく処理できる</notes>
